@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1F10C4561BE89C23000D8C41 /* GeneralLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F10C4551BE89C23000D8C41 /* GeneralLibrary.swift */; };
+		1F46D9A01BEA794F00FF169D /* Walkthrough.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1F46D99F1BEA794F00FF169D /* Walkthrough.gif */; };
 		1F5B29B41BE5B28800C1D29F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B29B31BE5B28800C1D29F /* AppDelegate.swift */; };
 		1F5B29B61BE5B28800C1D29F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5B29B51BE5B28800C1D29F /* ViewController.swift */; };
 		1F5B29B91BE5B28800C1D29F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F5B29B71BE5B28800C1D29F /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		1F10C4551BE89C23000D8C41 /* GeneralLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralLibrary.swift; sourceTree = "<group>"; };
+		1F46D99F1BEA794F00FF169D /* Walkthrough.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Walkthrough.gif; sourceTree = "<group>"; };
 		1F5B29B01BE5B28800C1D29F /* Tipster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tipster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F5B29B31BE5B28800C1D29F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F5B29B51BE5B28800C1D29F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -39,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F46D99E1BEA794F00FF169D /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				1F46D99F1BEA794F00FF169D /* Walkthrough.gif */,
+			);
+			path = Gif;
+			sourceTree = "<group>";
+		};
 		1F5B29A71BE5B28800C1D29F = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +68,7 @@
 		1F5B29B21BE5B28800C1D29F /* Tipster */ = {
 			isa = PBXGroup;
 			children = (
+				1F46D99E1BEA794F00FF169D /* Gif */,
 				1F5B29B31BE5B28800C1D29F /* AppDelegate.swift */,
 				1F5B29B51BE5B28800C1D29F /* ViewController.swift */,
 				1FF48F881BE73C6800B2E2BE /* SettingsViewController.swift */,
@@ -132,6 +143,7 @@
 				1F5B29BE1BE5B28800C1D29F /* LaunchScreen.storyboard in Resources */,
 				1F5B29BB1BE5B28800C1D29F /* Assets.xcassets in Resources */,
 				1F5B29B91BE5B28800C1D29F /* Main.storyboard in Resources */,
+				1F46D9A01BEA794F00FF169D /* Walkthrough.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
