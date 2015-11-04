@@ -59,7 +59,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         NSNotificationCenter.defaultCenter().addObserver(
             self,
             selector: "onAppWillResign:",
-            name: UIApplicationWillTerminateNotification,
+            name: UIApplicationWillResignActiveNotification,
             object: nil)
         setBillAmountText()
     }
@@ -69,9 +69,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
 
     override func viewWillAppear(animated: Bool) {
-        if !self.billAmount.isFirstResponder() {
-            self.billAmount.becomeFirstResponder()
-        }
         self.noOfSplits.text = String(format: "%d", Int(self.splitStepper.value))
         let opt1 = NSUserDefaults.standardUserDefaults().doubleForKey(OKSERVICEKEY)
         let opt2 = NSUserDefaults.standardUserDefaults().doubleForKey(GOODSERVICEKEY)
@@ -85,10 +82,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
 
+    override func viewDidAppear(animated: Bool) {
+        if !self.billAmount.isFirstResponder() {
+            self.billAmount.becomeFirstResponder()
+        }
+    }
+    
     func setBillAmountText() {
         if let lastDate = NSUserDefaults.standardUserDefaults().objectForKey(LASTDATE) {
             if NSDate().timeIntervalSinceDate(lastDate as! NSDate) < 600 {
-                self.billAmount.text = NSUserDefaults.standardUserDefaults().objectForKey(LASTAMOUNT) as? String
+                let bill = NSUserDefaults.standardUserDefaults().objectForKey(LASTAMOUNT) as? String
+                self.billAmount.text = bill
                 self.viewToShowOrHide.hidden = false
             }
         }
@@ -96,12 +100,17 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     func onAppActive(notification: NSNotification) {
         setBillAmountText()
+        if !self.billAmount.isFirstResponder() {
+            self.billAmount.becomeFirstResponder()
+        }
     }
     
     func onAppWillResign(notification: NSNotification) {
         // save date and value
-        NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: LASTDATE)
-        NSUserDefaults.standardUserDefaults().setObject(self.billAmount.text, forKey: LASTAMOUNT)
+        if self.billAmount.text?.characters.count > 0 {
+            NSUserDefaults.standardUserDefaults().setObject(NSDate(), forKey: LASTDATE)
+            NSUserDefaults.standardUserDefaults().setObject(self.billAmount.text, forKey: LASTAMOUNT)
+        }
     }
     
     // MARK: - IBActions
