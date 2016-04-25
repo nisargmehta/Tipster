@@ -53,12 +53,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "onAppActive:",
+            selector: #selector(ViewController.onAppActive(_:)),
             name: UIApplicationDidBecomeActiveNotification,
             object: nil)
         NSNotificationCenter.defaultCenter().addObserver(
             self,
-            selector: "onAppWillResign:",
+            selector: #selector(ViewController.onAppWillResign(_:)),
             name: UIApplicationWillResignActiveNotification,
             object: nil)
         setBillAmountText()
