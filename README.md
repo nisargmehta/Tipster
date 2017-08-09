@@ -15,4 +15,4 @@ Completed:
 
 ![Video Walkthrough](Tipster/Gif/Walkthrough.gif)
 
-Note: to embed the gif file, just check your gif file into your repo and update the name of the file above.
+Note: to embed the gif file, just check your gif file into your repo and update the name of the file above.(GIF generated using LiceCap)
