@@ -114,6 +114,7 @@
 					1F5B29AF1BE5B28800C1D29F = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = V556PY2K94;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -272,6 +273,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.open.Tipster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -283,6 +285,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.open.Tipster;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

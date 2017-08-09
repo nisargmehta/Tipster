@@ -28,10 +28,10 @@ class SettingsViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        let opt1 = NSUserDefaults.standardUserDefaults().doubleForKey(OKSERVICEKEY)
-        let opt2 = NSUserDefaults.standardUserDefaults().doubleForKey(GOODSERVICEKEY)
-        let opt3 = NSUserDefaults.standardUserDefaults().doubleForKey(AWESOMESERVICEKEY)
+    override func viewWillAppear(_ animated: Bool) {
+        let opt1 = UserDefaults.standard.double(forKey: OKSERVICEKEY)
+        let opt2 = UserDefaults.standard.double(forKey: GOODSERVICEKEY)
+        let opt3 = UserDefaults.standard.double(forKey: AWESOMESERVICEKEY)
         if opt3 != 0 {
             self.firstStepper.value = opt1;
             self.secondStepper.value = opt2;
@@ -42,13 +42,13 @@ class SettingsViewController: UITableViewController {
         self.optionThreeLabel.text = String(format: "%.f%%", self.thirdStepper.value)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        NSUserDefaults.standardUserDefaults().setDouble(self.firstStepper.value, forKey: OKSERVICEKEY)
-        NSUserDefaults.standardUserDefaults().setDouble(self.secondStepper.value, forKey: GOODSERVICEKEY)
-        NSUserDefaults.standardUserDefaults().setDouble(self.thirdStepper.value, forKey: AWESOMESERVICEKEY)
+    override func viewWillDisappear(_ animated: Bool) {
+        UserDefaults.standard.set(self.firstStepper.value, forKey: OKSERVICEKEY)
+        UserDefaults.standard.set(self.secondStepper.value, forKey: GOODSERVICEKEY)
+        UserDefaults.standard.set(self.thirdStepper.value, forKey: AWESOMESERVICEKEY)
     }
     
-    @IBAction func stepperValueChanged(sender: UIStepper) {
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
         switch sender.tag {
         case 1:
             self.optionOneLabel.text = String(format: "%.f%%", sender.value)
